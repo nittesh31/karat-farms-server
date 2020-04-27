@@ -2,7 +2,6 @@
   &__menus {
     background-color: $light-gray;
     padding: $global-padding * 2 0;
-    margin-top: $global-margin * 8;
     @include media-breakpoint-down(xs) {
       text-align: center;
       margin-top: $global-margin * 2;
@@ -58,7 +57,7 @@
       opacity: 0.6;
     }
     &.social-footer {
-      background-color: $dark-blue;
+      background-color: $carrot-orange;
       border-radius: 100%;
       display: inline-block;
       height: 36px;
@@ -75,7 +74,13 @@
 }
 
 .maincontent {
+  padding: 0;
+  max-width: 100%;
   @include media-breakpoint-down(sm) {
-    margin-top: $global-margin * 7;
+    margin-top: 0;
   }
+}
+
+.bg-carrot-orange {
+  background-color: $carrot-orange;
 }

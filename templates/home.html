@@ -3,57 +3,151 @@
 
 {% block content %}
   <div class="home">
-    <div class="row">
-      <div class="col-sm-12 home__block1">
-        <div class="home--square">
-          <div class="home--content">
-            <div class="home--content-wrapper">
-              <div class="home--content-inner">
-                <h1>{% trans "Promo & Sale" context "Homepage title" %}</h1>
-                <h2>{% trans "from the Northpole" context "Homepage title" %}</h2>
-                  <a class="btn btn-secondary home__button" href="#">
-                    {% trans "Shop now" context "Homepage action" %}
-                  </a>
+     <div class="home-video">
+      <div class="row">
+        <div class="col-12">
+            <h1>{% trans "Smart Kitchen Gardens" context "Homepage title" %}</h1>
+              <a class="btn btn-secondary home__button" href="#contact">
+                {% trans "Contact Us" context "Homepage action" %}
+              </a>
+          </div>
+      </div>
+     </div>
+    <section class="page-section">
+        <div class="container">
+          <div class="text-center">
+              <h1>Your terrace is your farm</h1> 
+          </div>
+          <div class="row">
+              <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/vegetale-danger.jpg">
+                      <p class="card-block">
+                          We are all well aware of the unethical practices used to sell vegetables. Wax coatings, hormones injections & chemical sprays. Yet there is no other source for our vegetables, so we end up buying from them. Even if you buy organic. Is there a way to check its authenticity for yourself? Not really! and this is what scares us.
+                      </p>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/banana-plane.jpg">
+                      <p class="card-block">
+                          On top of the health effects caused by consuming these vegetables, we are also impacting the environment in a negative way. There is a huge amount of CO2 emitted in order to process and transport these vegetables to your home. 
+                      </p>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/modern-farmer.jpeg">
+                      <p class="card-block">
+                          Karat Farms wants to address this situation. We believe there is a solution which gives the people more power, transparency and freedom.                      </p>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/dripper.jpg">
+                      <p class="card-block">
+                          Karat farms jumps on the opportunities provided by technology to create an innovative and sustainable solution so you can grow your vegetables at ease from your home!                      </p>
+                  </div>
               </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-6 home__block2">
-        <div class="home--square">
-          <div class="home--content">
-            <div class="home--content-wrapper">
-              <div class="home--content-inner">
-                <h1>{% trans "Size & Colours" context "Homepage title" %}</h1>
-                <a class="btn btn-secondary home__button" href="#">{% trans "Shop now" context "Homepage action" %}</a>
+        
+    </section>
+    <section class="page-section bg-light-gray" id="about">
+      <div class="container">
+        <div class="text-center">
+            <h1>About Us</h1> 
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h4 class="my-3">What we do?</h4>
+                <p class="text-muted">We are a vegetable gardening service to people who want to grow their own vegetables. </p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="my-3">Why we do what we do?</h4>
+                <p class="text-muted">Our vision is to reduce carbon miles of perishable vegetales and to enable people to grow their own food.</p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="my-3">How do we do it?</h4>
+                <p class="text-muted">Efficient tech enabled gardens with 24/7 remote garden care assistance.</p>
+            </div>
+        </div>
+    </section>
+    <section class="page-section" id="product">
+        <div class="container">
+          <div class="text-center">
+              <h1>Product features</h1> 
+          </div>
+          <div class="row">
+              <div class="col-sm-6 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/aesthetic.jpg">
+                      <p class="card-block">
+                          Aesthetic look
+                      </p>
+                  </div>
+              </div>
+              <div class="col-sm-6 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/wood.jpeg">
+                      <p class="card-block">
+                          Environment friendly material
+                      </p>
+                  </div>
+              </div>
+              <div class="col-sm-6 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/diy.jpg">
+                      <p class="card-block">
+                        DIY build
+                  </div>
+              </div>
+              <div class="col-sm-6 mt-4">
+                  <div class="card">
+                      <img class="card-img-top" src="/static/images/whatsapp.jpeg">
+                      <p class="card-block">
+                        Smart labour
+                  </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 home__block3">
-        <div class="home--square">
-          <div class="home--content">
-            <div class="home--content-wrapper">
-              <div class="home--content-inner">
-                <h1>{% trans "Digital Downloads" context "Homepage title" %}</h1>
-                <a class="btn btn-secondary home__button" href="#">{% trans "Shop now" context "Homepage action" %}</a>
-              </div>
+        </div>  
+
+    </section>
+    <section class="page-section bg-carrot-orange" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="section-heading text-uppercase">Contact Us</h1>
+                    <h4 class="section-subheading">We are here to assist you</h4>
+                </div>
+                <form id="contactForm" name="sentMessage" novalidate="novalidate" action="/contact-save/" method="post">
+                    {% csrf_token %}
+                    <div class="row align-items-stretch mb-5 d-flex justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="contact_name" name="contact_name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" id="contact_phone" name="contact_phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div id="success">
+                                    {% if messages %}
+                                    <div class="alert alert-success" role="alert">
+                                        {% for message in messages %}
+                                            {{ message }}
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Get a callback</button>
+                    </div>
+                </form>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% if products %}
-      <div class="home__featured">
-        <h2 class="text-center">{% trans "Featured products" context "Homepage title" %}</h2>
-        <div class="row">
-          {% include "product/_items.html" %}
-        </div>
-      </div>
-    {% endif %}
+    </section>
     <script type="application/ld+json">{{ webpage_schema|safe }}</script>
   </div>
 {% endblock %}

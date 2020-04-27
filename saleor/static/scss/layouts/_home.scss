@@ -4,9 +4,13 @@
   h1 {
     font-weight: 300;
     text-transform: uppercase;
+    color: black;
     @include media-breakpoint-down(sm) {
       font-size: 2.5rem;
     }
+  }
+  h4 {
+    color: black;
   }
   .btn {
     margin-top: $global-margin;
@@ -42,7 +46,7 @@
   }
   &__block1 {
     .home--square {
-      background-image: url('../images/block1.jpg');
+      background-image: url('../images/block2.jpg');
       @include media-breakpoint-up(md) {
         &:before {
           padding-top: 50%;
@@ -70,3 +74,57 @@
     }
   }
 }
+
+.page-section {
+  padding: 6rem 0;
+}
+
+.bg-light-gray {
+  background: $light-gray;
+}
+
+.home-video {
+  background-image: url('../images/seed-growth.jpg');
+  background-position: center center;
+  background-size: cover;
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  @media (min-width: 768px) {
+      padding-top: 17rem;
+      padding-bottom: 12.5rem;
+  }
+}
+
+.card {
+  font-size: 1em;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+.card-block {
+  font-size: 1em;
+  position: relative;
+  margin: 0;
+  padding: 1em;
+  border: none;
+  border-top: 1px solid rgba(34, 36, 38, .1);
+  box-shadow: none;
+  color: black;
+}
+
+.card-img-top {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.navbar-nav {
+  .nav-link.active {
+    color: $carrot-orange !important;w
+  }
+}
+
+

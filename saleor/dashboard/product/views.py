@@ -28,7 +28,7 @@ from .utils import get_product_tax_rate
 
 @staff_member_required
 @permission_required("product.manage_products")
-def product_list(request):
+def product_list(request): 
     products = Product.objects.prefetch_related("images")
     products = products.order_by("name")
     product_types = ProductType.objects.all()

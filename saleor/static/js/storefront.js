@@ -1,4 +1,5 @@
 import "jquery";
+import "jquery.easing"
 import "jquery.cookie";
 import "bootstrap";
 
@@ -9,10 +10,11 @@ import "./components/checkout";
 import "./components/footer";
 import "./components/language-picker";
 import "./components/misc";
-import "./components/navbar";
+// import "./components/navbar";
 import "./components/password-input";
 import "./components/product-filters";
 import "./components/sorter";
 import "./components/styleguide";
 import "./components/variant-picker";
 import "./components/description-json";
+import "./components/scrolling-nav";
