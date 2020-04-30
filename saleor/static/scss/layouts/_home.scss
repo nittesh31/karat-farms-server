@@ -128,7 +128,9 @@
   box-shadow: none;
   color: black;
   &.--height-290 {
-    height: 290px;
+    @media(min-width: 992px) {
+      height: 290px;
+    }
   }
 }
 
