@@ -73,6 +73,8 @@
       margin: $global-margin * 2 0;
     }
   }
+
+  
 }
 
 .page-section {
@@ -83,8 +85,8 @@
   background: $light-gray;
 }
 
-.home-video {
-  background-image: url('../images/seed-growth.jpg');
+.home-masthead {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/seed-growth.jpg');
   background-position: center center;
   background-size: cover;
   padding-top: 10.5rem;
@@ -93,6 +95,18 @@
       padding-top: 17rem;
       padding-bottom: 12.5rem;
   }
+  h1 {
+    color: white;
+    font-weight: 500;
+    filter: drop-shadow(0 0 1mm rgba(0, 0, 0, 0.32));
+    font-size: 4em;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    @media (max-width: 768px){
+      font-size: 2.5rem;
+    } 
+  }
+  
 }
 
 .card {
@@ -113,15 +127,40 @@
   border-top: 1px solid rgba(34, 36, 38, .1);
   box-shadow: none;
   color: black;
+  &.--height-290 {
+    height: 290px;
+  }
 }
 
 .card-img-top {
   display: block;
   width: 100%;
-  height: auto;
+  height: 210px;
+}
+
+
+nav.navbar {
+  @media (min-width: 992px) {
+    background: transparent;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  background: black;
+ 
+  padding: 15px;
+}
+
+nav.black {
+  background: black;
 }
 
 .navbar-nav {
+  .nav-link {
+    color: white;
+    &:hover {
+      color: $carrot-orange;
+    }
+  }
   .nav-link.active {
     color: $carrot-orange !important;
   }

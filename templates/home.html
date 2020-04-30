@@ -1,9 +1,38 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
+{% block header %}
+  <header role="navigation" >
+    <nav class="navbar navbar-expand-lg fixed-top w-100" id="mainNav">
+      <div class="navbar__logo">
+        <a href="{% url 'home' %}">
+          <svg data-src="{% static 'images/karat-farms-white.svg' %}"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+{% endblock %}
 {% block content %}
   <div class="home">
-     <div class="home-video">
+     <div class="home-masthead">
       <div class="row">
         <div class="col-12">
             <h1>{% trans "Smart Kitchen Gardens" context "Homepage title" %}</h1>
@@ -21,31 +50,31 @@
           <div class="row">
               <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                   <div class="card">
-                      <img class="card-img-top" src="/static/images/vegetale-danger.jpg">
-                      <p class="card-block">
-                          We are all well aware of the unethical practices used to sell vegetables. Wax coatings, hormones injections & chemical sprays. Yet there is no other source for our vegetables, so we end up buying from them. Even if you buy organic. Is there a way to check its authenticity for yourself? Not really! and this is what scares us.
+                      <img class="card-img-top" src="/static/images/chemical-spray.png">
+                      <p class="card-block --height-290">
+                          Wax coatings, hormones injections & chemical sprays. Yet there is no other source for our vegetables, so we end up buying from groceries. Even if you buy organic, is there a way to check its authenticity for yourself? 
                       </p>
                   </div>
               </div>
               <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                   <div class="card">
-                      <img class="card-img-top" src="/static/images/banana-plane.jpg">
-                      <p class="card-block">
-                          On top of the health effects caused by consuming these vegetables, we are also impacting the environment in a negative way. There is a huge amount of CO2 emitted in order to process and transport these vegetables to your home. 
+                      <img class="card-img-top" src="/static/images/banana-plane.png">
+                      <p class="card-block --height-290">
+                          On top of the health effects caused by consuming these veggies, we are also impacting the environment in a negative way. There is a huge amount of CO2 emitted in order to process and transport these vegetables to your home. 
                       </p>
                   </div>
               </div>
               <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                   <div class="card">
-                      <img class="card-img-top" src="/static/images/modern-farmer.jpeg">
-                      <p class="card-block">
+                      <img class="card-img-top" src="/static/images/freedom.png">
+                      <p class="card-block --height-290">
                           Karat Farms wants to address this situation. We believe there is a solution which gives the people more power, transparency and freedom.                      </p>
                   </div>
               </div>
               <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                   <div class="card">
-                      <img class="card-img-top" src="/static/images/dripper.jpg">
-                      <p class="card-block">
+                      <img class="card-img-top" src="/static/images/tech.png">
+                      <p class="card-block --height-290">
                           Karat farms jumps on the opportunities provided by technology to create an innovative and sustainable solution so you can grow your vegetables at ease from your home!                      </p>
                   </div>
               </div>
@@ -65,8 +94,8 @@
             </div>
             <div class="col-md-4">
                 <h4 class="my-3">Why we do what we do?</h4>
-                <p class="text-muted">Our vision is to reduce carbon miles of perishable vegetales and to enable people to grow their own food.</p>
-            </div>
+                <p class="text-muted">Our vision is to reduce carbon miles of perishable vegetables and to enable people to grow their own food.</p>
+            </div> 
             <div class="col-md-4">
                 <h4 class="my-3">How do we do it?</h4>
                 <p class="text-muted">Efficient tech enabled gardens with 24/7 remote garden care assistance.</p>

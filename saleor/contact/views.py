@@ -20,5 +20,5 @@ def contact(request):
             )
             contact.save()
 
-            messages.success(request, 'Thanks for contacting us. We will call you back soon.e')
+            messages.success(request, 'Thanks for contacting us. We will get in touch with you soon.')
             return redirect('/#contact')
