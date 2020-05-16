@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+  <header role="navigation" >
+    <nav class="navbar navbar-expand-lg w-100" id="mainNav" style="background: black">
+      <div class="navbar__logo">
+        <a href="{% url 'home' %}">
+          <svg data-src="{% static 'images/karat-farms-white.svg' %}"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{% url 'home' %}#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{% url 'home' %}#product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{% url 'home' %}#contact">Contact Us</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+{% endblock %}
+{% block content %}
+<div class="container" style="padding: 25px;">
+    <div class="row" style="padding-top: 25px; padding-bottom:25px;">
+            <h1>Raised Garden Bed Pro</h1>
+    </div>
+    <div class="row">
+        <div id="carouselExampleIndicators" class="col-sm-4 carousel slide" data-ride="carousel"> 
+                <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="background-color: gray;"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" style="background-color: gray;"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2" style="background-color: gray;"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3" style="background-color: gray;"></li>
+                </ol>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="/static/images/poster-garden-pro-4.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/static/images/poster-garden-pro-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/static/images/poster-garden-pro-3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                        <img class="d-block w-100" src="/static/images/poster-garden-pro-1.jpg" alt="Third slide">
+                </div>
+                </div>
+        </div>
+        <div class="col-sm-8" style="padding-top: 25px;">
+                    Dimensions - L X B X H - 1.3m X 0.8m X 0.8m  
+                    <br>
+                    Weight - 15kg
+                    <br>
+                    <br>
+                    We promise 🖐🏻 that you will never have to bend again to attend to your plants🌱
+                    <br>
+                    <li>🌞 UV resistant - 🌨️ Weather proof - 💧Water proof </li>
+                    <li> Aesthetic 💯 raised garden basket for your terrace or balcony 💃🏻</li>
+                    <li> A complete DIY setup! which takes just 10min! ⏱️ </li> 
+                     <li>Now you can start the kitchen garden you have always wanted 🤸🏻‍</li>
+                    <br>
+                    1 table @5000rs only! including a FREE Grow Bag!
+                    <br>
+                    2 tables @9000rs only! including 2 FREE Grow Bag!
+                    <br>
+                    4 tables @18000rs only! Including 4 FREE Grow Bag!
+                    <br>
+        </div>
+
+    </div>
+</div>
+<section class="testimonal-section" style="padding: 25px; padding-bottom: 50px; background:gray;">
+        <div class="container">
+            <div class="row" style="padding-top: 25px; padding-bottom: 25px;">
+                <h1 style="color: white">Testimonials</h1> 
+            </div>
+            <div class="row" style="color: white;">
+                    <div id="testimonial-carosusel" class="carousel slide" data-ride="carousel" >
+                            <ol class="carousel-indicators" style="bottom : -50px">
+                            <li data-target="#testimonial-carosusel" data-slide-to="0" class="active"></li>
+                            <li data-target="#testimonial-carosusel" data-slide-to="1"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <img class="d-block w-100" src="/static/images/testimonial-pic-1.jpg" alt="First slide">
+                                        </div>
+                                        <div class="col-sm-6">
+                                                "I have always wanted to have my own garden but never had the space and time to do it. When Karat Farms approached me to test their garden table prototype. I was thrilled. Luckily it fit in the small balcony I had. Not only was it convenient to use. It also made my balcony a whole lot prettier. And most of all it was super affordable! really excited for the add on features which are launching soon." <br> <br>- Harikrishnan NS, Bangalore
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                        <div class="row">
+                                    <div class="col-sm-4">
+                                        <img class="d-block w-100" src="/static/images/testimonial-pic-2.jpg" alt="Second slide">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        "It was a big headache for me to search for just the right looking garden for my terrace. I wanted something that did not require bending. The raised bed garden by Karat Farms was just the perfect product for me. I could attend to my plants with a lot of convenience. Can’t wait for the add on features to the table!" <br> <br> - Rajshree M, Mumbai
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    
+</section>
+
+<section class="founder-section" style="padding: 25px; color: gray;">
+    <div class="container">
+        <div class="row" style="padding-top: 25px; padding-bottom: 25px;">
+            <h1 style="color: gray">Note from the founder</h1> 
+        </div>
+        <div class="row">
+            <p>
+                I hope you are safe and doing well during these uncertain times. Although most things are uncertain, one thing which has become quite certain is the fact that people will have to start growing their vegetables at home. 
+                With that being said, developing an AFFORDABLE solution which will help people grow with utmost ease and convenience is the need of the hour. And that is our one and only aim at these times. We will slowly launch multiple solutions 
+                step by step keeping in mind that most people have little or no experience in growing edible gardens. The Raised Bed Garden is your first step in this journey of creating an edible garden at home. 
+                <br> <br>
+                To know more about the upcoming features follow us on Instagram & Facebook. 
+                <br> <br>
+                Stay at home and always wear a mask when going out.
+                <br> <br>
+                - Siva Sethupathy (Founder, Karat Farms)
+            </p>
+            <img src="/static/images/founder-1.JPG"/ class="ratio img-circle img-responsive">
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

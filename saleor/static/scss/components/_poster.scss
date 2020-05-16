@@ -1,0 +1,29 @@
+h1 {
+    font-weight: 300;
+    text-transform: none;
+    color: black;
+    @include media-breakpoint-down(sm) {
+      font-size: 2.5rem;
+    }
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
