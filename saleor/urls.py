@@ -22,12 +22,14 @@ from .search.urls import urlpatterns as search_urls
 from .blog.urls import urlpatterns as blog_urls
 from .contact.urls import urlpatterns as contact_urls
 from .poster.urls import urlpatterns as poster_urls
+from .iot.urls import urlpatterns as iot_urls
 
 handler404 = "saleor.core.views.handle_404"
 
 non_translatable_urlpatterns = [
     url(r"^blog/", include((blog_urls, "blog"), namespace="blog")),
     url(r"^", include((contact_urls, "contact"), namespace="contact")),
+    url(r"^", include((iot_urls, "iot"), namespace="onoff")),
     url(r"^", include((poster_urls, "poster"), namespace="poster")),
     url(r"^dashboard/", include((dashboard_urls, "dashboard"), namespace="dashboard")),
     url(r"^graphql/", csrf_exempt(GraphQLView.as_view(schema=schema)), name="api"),

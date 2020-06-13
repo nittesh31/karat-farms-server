@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IOT Dashboard</title>
+
+</head>
+<body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <button type="button" class="btn btn-primary" onclick="sendON()">ON</button>
+  <button type="button" class="btn btn-primary" onclick="sendOFF()">OFF</button>
+
+  <script>
+    function sendON(){
+        $.ajax({
+            //the url to send the data to
+            url: "https://bosc5t1qv3.execute-api.us-west-2.amazonaws.com/Prod/publish",
+            //the data to send to
+            data: 'ON',
+            //type. for eg: GET, POST
+            type: "POST",
+            //datatype expected to get in reply form server
+            dataType: "json",
+            //on success
+            success: function(data){
+                //do something after something is recieved from php
+                console.log("success");
+            },
+            //on error
+            error: function(){
+                //bad request
+                console.log("failure");
+            }
+        });
+    }
+
+    function sendOFF(){
+        $.ajax({
+            //the url to send the data to
+            url: "https://bosc5t1qv3.execute-api.us-west-2.amazonaws.com/Prod/publish",
+            //the data to send to
+            data: 'OFF',
+            //type. for eg: GET, POST
+            type: "POST",
+            //datatype expected to get in reply form server
+            dataType: "json",
+            //on success
+            success: function(data){
+                //do something after something is recieved from php
+                console.log("success");
+            },
+            //on error
+            error: function(){
+                //bad request
+                console.log("failure");
+            }
+        });
+    }
+  </script>
+</body>
+</html>
