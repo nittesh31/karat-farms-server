@@ -23,7 +23,6 @@ def on(request):
         }
 
     )
-    print(r.status_code)
     return HttpResponseRedirect('/iot-test-on-off/')
 
 
@@ -37,7 +36,6 @@ def off(request):
         }
 
     )
-    print(r.status_code)
     return HttpResponseRedirect('/iot-test-on-off/')
 
 
@@ -52,13 +50,6 @@ def changetimer(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            print('yay!')
-            print(form.cleaned_data['sl_no'])
-            print(form.cleaned_data['start_time'])
-            print(form.cleaned_data['duration'])
-            print(form.cleaned_data['status'])
-
-            print(str(request.user))
             r = requests.post(
                 'https://bosc5t1qv3.execute-api.us-west-2.amazonaws.com/Prod/publish',
                 json={
@@ -73,6 +64,4 @@ def changetimer(request):
                 }
 
             )
-
-            print(r.status_code)
             return HttpResponseRedirect('/iot-test-on-off/')
