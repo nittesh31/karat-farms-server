@@ -7,7 +7,8 @@
     <nav class="navbar navbar-expand-lg fixed-top w-100" id="mainNav">
       <div class="navbar__logo">
         <a href="{% url 'home' %}">
-          <svg data-src="{% static 'images/karat-farms-white.svg' %}"/>
+<!--          <svg data-src="{% static 'images/karat-farms-white.svg' %}"/>-->
+          <img src="{% static "images/full-logo.png" %}"/ style="width: 6rem;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
@@ -33,12 +34,12 @@
 {% block content %}
   <div class="home">
      <div class="home-masthead">
-       <div class="container">  
+       <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1>{% trans "Smart Kitchen Gardens" context "Homepage title" %}</h1>
                     <a class="btn btn-secondary home__button" href="#contact">
-                        {% trans "Contact Us" context "Homepage action" %}
+                        {% trans "Subscribe now" context "Homepage action" %}
                     </a>
                 </div>
             </div>
@@ -47,14 +48,14 @@
     <section class="page-section">
         <div class="container">
           <div class="text-center">
-              <h1>Your terrace is your farm</h1> 
+              <h1>Your farm in your home</h1>
           </div>
           <div class="row">
               <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                   <div class="card">
                       <img class="card-img-top" src="/static/images/chemical-spray.png">
                       <p class="card-block --height-290">
-                          Wax coatings, hormones injections & chemical sprays. Yet there is no other source for our vegetables, so we end up buying from groceries. Even if you buy organic, is there a way to check its authenticity for yourself? 
+                          Wax coatings, hormones injections & chemical sprays. Yet there is no other source for our vegetables, so we end up buying from groceries. Even if you buy organic, is there a way to check its authenticity for yourself?
                       </p>
                   </div>
               </div>
@@ -62,7 +63,7 @@
                   <div class="card">
                       <img class="card-img-top" src="/static/images/banana-plane.png">
                       <p class="card-block --height-290">
-                          On top of the health effects caused by consuming these veggies, we are also impacting the environment in a negative way. There is a huge amount of CO2 emitted in order to process and transport these vegetables to your home. 
+                          On top of the health effects caused by consuming these veggies, we are also impacting the environment in a negative way. There is a huge amount of CO2 emitted in order to process and transport these vegetables to your home.
                       </p>
                   </div>
               </div>
@@ -82,35 +83,28 @@
               </div>
             </div>
         </div>
-        
+
     </section>
-    <section class="page-section bg-dark" id="about">
+    <section class="page-section bg-light-grey" id="about">
       <div class="container">
-        <div class="text-center">
-            <h1>About Us</h1> 
-        </div>
         <div class="row text-center">
-            <div class="col-md-4">
-                <img class="about-icon" src="/static/images/icon-plant-white.png"/>
-                <h4>What we do?</h4>
-                <p>We are a vegetable gardening service to people who want to grow their own vegetables. </p>
+            <div class="col-md-6 border-line">
+                <img class="about-icon" src="/static/images/mission.png"/>
+                <h4>Mission</h4>
+                <p>To provide accessible, affordable & simple solutions to empower people to grow their own food </p>
             </div>
-            <div class="col-md-4">
-                <img class="about-icon" src="/static/images/icon-co2-white.png"/>
-                <h4>Why we do what we do?</h4>
-                <p>Our vision is to reduce carbon miles of perishable vegetables and to enable people to grow their own food.</p>
-            </div> 
-            <div class="col-md-4">
-                <img class="about-icon" src="/static/images/icon-tech-white.png"/>
-                <h4>How do we do it?</h4>
-                <p>Efficient tech enabled gardens with 24/7 remote garden care assistance.</p>
+            <div class="col-md-6">
+                <img class="about-icon" src="/static/images/vision.png"/>
+                <h4>Vision</h4>
+                <p>To be a trusted resource for urban farmers all over India</p>
             </div>
         </div>
+      </div>
     </section>
     <section class="page-section" id="product">
         <div class="container">
           <div class="text-center">
-              <h1>Product features</h1> 
+              <h1>Product features</h1>
           </div>
           <div class="row">
               <div class="col-sm-6 mt-4">
@@ -144,10 +138,10 @@
                   </div>
               </div>
             </div>
-        </div>  
+        </div>
 
     </section>
-    <section class="page-section bg-carrot-orange" id="contact">
+    <section class="page-section bg-light-orange" id="contact">
             <div class="container">
                 <div class="text-center">
                     <h1 class="section-heading text-uppercase">Contact Us</h1>
@@ -177,7 +171,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Get a callback</button>
+                        <button class="btn btn-primary btn-light-grey btn-xl text-uppercase" id="sendMessageButton" type="submit">Get a callback</button>
                     </div>
                 </form>
             </div>

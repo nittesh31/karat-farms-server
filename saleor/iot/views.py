@@ -13,6 +13,7 @@ def iotDashboard(request):
     return TemplateResponse(request, "iot/onoff.html", {"user": request.user, "form": form})
 
 
+
 @login_required
 def on(request):
     r = requests.post(

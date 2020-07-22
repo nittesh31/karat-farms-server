@@ -74,7 +74,7 @@
     }
   }
 
-  
+
 }
 
 .page-section {
@@ -85,12 +85,12 @@
   background: $light-gray;
 }
 
-.bg-dark {
-  background: url('../images/green-leaf-bg.jpg');
+.bg-light-grey{
+  background-color: #ebe3dd;
   background-attachment: fixed;
+  color: black;
   h1,h4 {
-    color: white;
-    padding: 15px;
+    color: black;
   }
 }
 
@@ -113,9 +113,9 @@
     text-transform: none;
     @media (max-width: 768px){
       font-size: 2.5rem;
-    } 
+    }
   }
-  
+
 }
 
 .card {
@@ -163,28 +163,33 @@ nav.navbar {
     padding-left: 70px;
     padding-right: 70px;
   }
-  background: black;
- 
+  background: $light-grey;
   padding: 15px;
 }
 
-nav.black {
-  background: black;
+nav.light-grey {
+  background: $light-grey;
 }
 
 .navbar-nav {
   .nav-link {
-    color: white;
+    color: $black;
     &:hover {
-      color: $carrot-orange;
+      color: $light-orange;
     }
   }
   .nav-link.active {
-    color: $carrot-orange !important;
+    color: $light-orange !important;
   }
 }
 
 .about-icon {
   width : 50%;
+}
+
+.border-line {
+  @media (min-width: 768px) {
+    border-right: 3px solid black;
+  }
 }
 

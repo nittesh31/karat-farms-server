@@ -5,4 +5,5 @@ from django import forms
 class ContactForm(forms.Form):
     contact_name = forms.CharField(required=True)
     contact_phone = forms.CharField(required=True)
-    
+    # address = forms.CharField(required=True)
+    # contact_phone = forms.CharField(required=True)

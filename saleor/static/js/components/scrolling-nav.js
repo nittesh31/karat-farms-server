@@ -1,6 +1,6 @@
 (function($) {
     "use strict"; // Start of use strict
-  
+
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -14,12 +14,12 @@
         }
       }
     });
-  
+
     // Closes responsive menu when a scroll trigger link is clicked
     $('.js-scroll-trigger').click(function() {
       $('.navbar-collapse').collapse('hide');
     });
-  
+
     // Activate scrollspy to add active class to navbar items on scroll
     $('body').scrollspy({
       target: '#mainNav',
@@ -29,12 +29,12 @@
     // Scrolling Effect
     $(window).on("scroll", function() {
       if($(window).scrollTop()) {
-            $('nav').addClass('black');
+            $('nav').addClass('light-grey');
       }
 
       else {
-            $('nav').removeClass('black');
+            $('nav').removeClass('light-grey');
       }
 })
-  
+
   })(jQuery); // End of use strict

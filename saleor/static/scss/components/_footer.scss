@@ -1,6 +1,6 @@
 .footer {
   &__menus {
-    background-color: $light-gray;
+    background-color: $light-grey;
     padding: $global-padding * 2 0;
     @include media-breakpoint-down(xs) {
       text-align: center;
@@ -57,7 +57,7 @@
       opacity: 0.6;
     }
     &.social-footer {
-      background-color: $carrot-orange;
+      background-color: $light-orange;
       border-radius: 100%;
       display: inline-block;
       height: 36px;
@@ -81,6 +81,17 @@
   }
 }
 
-.bg-carrot-orange {
-  background-color: $carrot-orange;
+.bg-light-orange {
+  background-color: $light-orange;
 }
+
+.btn-light-grey {
+  background-color: $light-grey;
+  padding: 1rem 4rem;
+  color: $black;
+  &:hover {
+      background-color: $black;
+      color: $white;
+  }
+}
+
