@@ -3,15 +3,25 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 
 from .forms import ChangeTimerForm
-
+from .models import FarmImage
 import requests
-
+import boto3
+import base64
+s3_client = boto3.client('s3',
+                         aws_access_key_id='AKIAJMONY4HMYTLPXIWA',
+                         aws_secret_access_key='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')
 
 @login_required
 def iotDashboard(request):
     form = ChangeTimerForm()
-    return TemplateResponse(request, "iot/onoff.html", {"user": request.user, "form": form})
-
+    print(request.user.email)
+    objects = FarmImage.objects.filter(email=request.user.email).order_by('-time_created')[:5]
+    images = []
+    for object in objects:
+        response = s3_client.get_object(Bucket='karat-video-test', Key=object.image_name)
+        images.append(base64.b64encode(response['Body'].read()).decode('utf-8'))
+    print(images)
+    return TemplateResponse(request, "iot/onoff.html", {"user": request.user, "form": form, "images" : images})
 
 
 @login_required

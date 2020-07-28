@@ -11,8 +11,6 @@ def contact(request):
     if request.method == 'POST':
         form = form_class(data=request.POST)
         if form.is_valid():
-            print(form.cleaned_data['contact_name'])
-            print(form.cleaned_data['contact_phone'])
 
             contact = Contact(
                 name=form.cleaned_data['contact_name'],

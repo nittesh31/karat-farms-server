@@ -7,11 +7,11 @@ import logging
 import boto3
 from botocore.exceptions import ClientError # Define Variables
 import datetime
+import psycopg2
 
 MQTT_PORT = 8883
 MQTT_KEEPALIVE_INTERVAL = 45
-MQTT_TOPIC = "video"
-MQTT_MSG = "hello MQTT"
+MQTT_TOPIC = "video/+"
 
 MQTT_HOST = "a3nov961lj6kjd-ats.iot.us-west-2.amazonaws.com"
 CA_ROOT_CERT_FILE = "/Users/apple/karat-farms/karat-farms-server/saleor/iot/root-CA.crt"
@@ -22,6 +22,13 @@ s3_client = boto3.client('s3',
                          aws_access_key_id='AKIAJMONY4HMYTLPXIWA',
                          aws_secret_access_key='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')
 
+myConnection = psycopg2.connect(host='localhost', user='saleor', password='saleor', dbname='saleor')
+print(myConnection)
+cur = myConnection.cursor()
+
+def writeToDB(email, imgName):
+    x = cur.execute("INSERT INTO iot_farmimage (email, image_name, time_created) VALUES (%s, %s, %s)", (email, imgName, datetime.datetime.now()))
+    myConnection.commit()
 
 def byte_array_to_pil_image(byte_array):
     return Image.open(io.BytesIO(byte_array))
@@ -40,7 +47,8 @@ def on_message(mosq, obj, msg):
     # print("Topic: " + str(msg.topic))
     # print("QoS: " + str(msg.qos))
     print("yeah")
-    print("Payload: " + str(msg.payload))
+    print("Topic :", str(msg.topic))
+    # print("Payload: " + str(msg.payload))
     print("###################")
     # imageByteString = msg.payload
     # strings = imageByteString.split(',')
@@ -50,18 +58,24 @@ def on_message(mosq, obj, msg):
 
     # print(io.BytesIO(imageBytes))
     # img = Image.fromarray(msg.payload, 'RGB')
+
+    user_email = str(msg.topic).split('/')[1]
+    print(user_email)
     img = byte_array_to_pil_image(msg.payload)
     in_mem_file = io.BytesIO()
     img.save(in_mem_file, 'jpeg')
     in_mem_file.seek(0)
-    s3_client.upload_fileobj(in_mem_file, "karat-video-test", str(datetime.datetime.now()) + ".jpg")
+    imgName = user_email + "-" + str(datetime.datetime.now()) + ".jpg"
+    s3_client.upload_fileobj(in_mem_file, "karat-video-test", imgName)
+    print("uploaded")
+    writeToDB(user_email, imgName)
     print("@@@@@@@")
 
 
 
 
 def on_subscribe(mosq, obj, mid, granted_qos):
-    print("Subscribed to Topic: " + MQTT_MSG + " with QoS: " + str(granted_qos))
+    print("Subscribed to Topic: " + MQTT_TOPIC + " with QoS: " + str(granted_qos))
 
 
 # Initiate MQTT Client

@@ -18,11 +18,12 @@
         <input type="submit" value="Submit">
       </form>
   </table>
-  <h3>LIVE VIDEO</h3>
+  <h3>LATEST IMAGES</h3>
   <figure>
     <div id="stream-container" class="image-container">
-      <div class="close" id="close-stream">×</div>
-        <img id="stream" src="http://2.tcp.ngrok.io:17384/stream" style="height: 300px; width = 300px;">
+        {% for image in images %}
+              <img id="stream" src="data:image/gif;base64,{{ image }}" style="height: 300px; width = 300px;">
+        {% endfor %}
     </div>
   </figure>
 </body>

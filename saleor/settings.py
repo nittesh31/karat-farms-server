@@ -256,6 +256,7 @@ INSTALLED_APPS = [
     "saleor.page",
     "saleor.payment",
     "saleor.webhook",
+    "saleor.iot",
     "saleor.contact",
     # External apps
     "versatileimagefield",
