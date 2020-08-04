@@ -7,5 +7,5 @@ urlpatterns = [
     url(r"^change-timer/$", views.changetimer, name="changetimer"),
     url(r"^on/$", views.on, name="on"),
     url(r"^off/$", views.off, name="off"),
-
+    url(r"^post-image/$", views.post_image, name="postimage"),
 ]

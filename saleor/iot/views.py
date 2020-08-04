@@ -7,6 +7,14 @@ from .models import FarmImage
 import requests
 import boto3
 import base64
+
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from PIL import Image
+import io
+import datetime
+from concurrent.futures import ThreadPoolExecutor
+
 s3_client = boto3.client('s3',
                          aws_access_key_id='AKIAJMONY4HMYTLPXIWA',
                          aws_secret_access_key='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')
@@ -14,13 +22,11 @@ s3_client = boto3.client('s3',
 @login_required
 def iotDashboard(request):
     form = ChangeTimerForm()
-    print(request.user.email)
     objects = FarmImage.objects.filter(email=request.user.email).order_by('-time_created')[:5]
     images = []
     for object in objects:
         response = s3_client.get_object(Bucket='karat-video-test', Key=object.image_name)
         images.append(base64.b64encode(response['Body'].read()).decode('utf-8'))
-    print(images)
     return TemplateResponse(request, "iot/onoff.html", {"user": request.user, "form": form, "images" : images})
 
 
@@ -76,3 +82,24 @@ def changetimer(request):
 
             )
             return HttpResponseRedirect('/iot-test-on-off/')
+
+def byte_array_to_pil_image(byte_array):
+    return Image.open(io.BytesIO(byte_array))
+
+def upload_image(payload, user_email):
+    img = byte_array_to_pil_image(payload)
+    in_mem_file = io.BytesIO()
+    img.save(in_mem_file, 'jpeg')
+    in_mem_file.seek(0)
+    imgName = user_email + "-" + str(datetime.datetime.now()) + ".jpg"
+    s3_client.upload_fileobj(in_mem_file, "karat-video-test", imgName)
+    FarmImage(email=user_email,image_name=imgName).save()
+
+
+executor = ThreadPoolExecutor(max_workers=2)
+@csrf_exempt
+def post_image(request):
+    if request.method == 'POST':
+       user_email = request.GET.get('email')
+       executor.submit(upload_image, request.body, user_email)
+       return HttpResponse("hi-post")
