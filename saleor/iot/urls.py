@@ -8,4 +8,5 @@ urlpatterns = [
     url(r"^on/$", views.on, name="on"),
     url(r"^off/$", views.off, name="off"),
     url(r"^post-image/$", views.post_image, name="postimage"),
+    url(r"^get-new-bin/$", views.get_new_bin, name="getnewbin"),
 ]

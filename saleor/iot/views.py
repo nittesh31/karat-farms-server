@@ -8,7 +8,7 @@ import requests
 import boto3
 import base64
 
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse
 from django.views.decorators.csrf import csrf_exempt
 from PIL import Image
 import io
@@ -103,3 +103,7 @@ def post_image(request):
        user_email = request.GET.get('email')
        executor.submit(upload_image, request.body, user_email)
        return HttpResponse("hi-post")
+
+@csrf_exempt
+def get_new_bin(request):
+    return FileResponse(open("./karat-farms-iot.ino.esp32.bin", "rb"))
