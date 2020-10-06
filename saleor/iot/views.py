@@ -22,12 +22,19 @@ s3_client = boto3.client('s3',
 @login_required
 def iotDashboard(request):
     form = ChangeTimerForm()
-    objects = FarmImage.objects.filter(email=request.user.email).order_by('-time_created')[:5]
-    images = []
-    for object in objects:
-        response = s3_client.get_object(Bucket='karat-video-test', Key=object.image_name)
-        images.append(base64.b64encode(response['Body'].read()).decode('utf-8'))
-    return TemplateResponse(request, "iot/onoff.html", {"user": request.user, "form": form, "images" : images})
+    all_images = []
+    for i in range(5):
+        objects = FarmImage.objects.filter(email=request.user.email, camera_no=i).order_by('-time_created')[:5]
+        images = []
+        for object in objects:
+            try:
+                response = s3_client.get_object(Bucket='karat-video-test', Key=object.image_name)
+                images.append(base64.b64encode(response['Body'].read()).decode('utf-8'))
+            except s3_client.exceptions.NoSuchKey :
+                print("No key found for image")
+        if len(images) != 0 :
+            all_images.append(images)
+    return TemplateResponse(request, "iot/onoff.html", {"user": request.user, "form": form, "all_images" : all_images})
 
 
 @login_required
@@ -86,22 +93,24 @@ def changetimer(request):
 def byte_array_to_pil_image(byte_array):
     return Image.open(io.BytesIO(byte_array))
 
-def upload_image(payload, user_email):
+def upload_image(payload, user_email, camera_no):
     img = byte_array_to_pil_image(payload)
     in_mem_file = io.BytesIO()
     img.save(in_mem_file, 'jpeg')
     in_mem_file.seek(0)
-    imgName = user_email + "-" + str(datetime.datetime.now()) + ".jpg"
+    imgName = user_email + "-" + str(datetime.datetime.now()) + "-" + str(camera_no) + ".jpg"
     s3_client.upload_fileobj(in_mem_file, "karat-video-test", imgName)
-    FarmImage(email=user_email,image_name=imgName).save()
+    FarmImage(email=user_email, image_name=imgName, camera_no=camera_no).save()
 
 
 executor = ThreadPoolExecutor(max_workers=2)
+
 @csrf_exempt
 def post_image(request):
     if request.method == 'POST':
        user_email = request.GET.get('email')
-       executor.submit(upload_image, request.body, user_email)
+       camera_no = int(request.GET.get('camera_no', 0))
+       executor.submit(upload_image, request.body, user_email, camera_no)
        return HttpResponse("hi-post")
 
 @csrf_exempt

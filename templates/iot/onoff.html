@@ -19,12 +19,14 @@
       </form>
   </table>
   <h3>LATEST IMAGES</h3>
-  <figure>
-    <div id="stream-container" class="image-container">
-        {% for image in images %}
-              <img id="stream" src="data:image/gif;base64,{{ image }}" style="height: 300px; width = 300px;">
-        {% endfor %}
-    </div>
-  </figure>
+  {% for images in all_images %}
+    <figure>
+      <div class="image-container">
+          {% for image in images %}
+                <img id="stream" src="data:image/gif;base64,{{ image }}" style="height: 300px; width = 300px;">
+          {% endfor %}
+      </div>
+    </figure>
+  {% endfor %}
 </body>
 </html>
