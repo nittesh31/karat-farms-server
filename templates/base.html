@@ -8,6 +8,15 @@
 
 <html lang="{{ LANGUAGE_CODE }}" class="no-js" data-shipping-options-url="{% url 'checkout:shipping-options' %}" data-checkout-summary-url="{% url 'checkout:dropdown' %}">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8RHP1YZZ4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q8RHP1YZZ4');
+  </script>
   <title>{% block title %}{{ site.name }}{% endblock %}</title>
   {% block meta %}
     <meta charset="utf-8">
@@ -44,16 +53,6 @@
   <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8RHP1YZZ4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-Q8RHP1YZZ4');
-  </script>
 </head>
 
 <body>
