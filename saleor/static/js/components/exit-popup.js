@@ -4,7 +4,7 @@ function ouibounce(el, custom_config) {
   var config     = custom_config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
-    timer        = setDefault(config.timer, 5000),
+    timer        = setDefault(config.timer, 1000),
     delay        = setDefault(config.delay, 0),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
@@ -29,6 +29,7 @@ function ouibounce(el, custom_config) {
   }
 
   setTimeout(fire, 20000);
+  setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
     if (isDisabled()) { return; }
 
@@ -39,7 +40,6 @@ function ouibounce(el, custom_config) {
 
   function handleMouseleave(e) {
     if (e.clientY > sensitivity) { return; }
-
     _delayTimer = setTimeout(fire, delay);
   }
 
