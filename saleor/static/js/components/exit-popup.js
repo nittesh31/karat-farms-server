@@ -4,7 +4,7 @@ function ouibounce(el, custom_config) {
   var config     = custom_config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
-    timer        = setDefault(config.timer, 1000),
+    timer        = setDefault(config.timer, 5000),
     delay        = setDefault(config.delay, 0),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
@@ -28,7 +28,7 @@ function ouibounce(el, custom_config) {
     return "; expires=" + date.toUTCString();
   }
 
-  setTimeout(attachOuiBounce, timer);
+  setTimeout(fire, 20000);
   function attachOuiBounce() {
     if (isDisabled()) { return; }
 
@@ -130,8 +130,6 @@ function ouibounce(el, custom_config) {
   };
 };
 
-
-console.log('sup');
 // if you want to use the 'fire' or 'disable' fn,
 // you need to save OuiBounce to an object
 var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
@@ -151,5 +149,4 @@ $('#ouibounce-modal .modal-footer').on('click', function() {
 $('#ouibounce-modal .modal').on('click', function(e) {
   e.stopPropagation();
 });
-console.log('yo');
 
