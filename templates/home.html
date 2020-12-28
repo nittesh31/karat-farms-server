@@ -39,7 +39,7 @@
                 <div class="col-12">
                     <h1>{% trans "Smart Kitchen Gardens" context "Homepage title" %}</h1>
                     <a class="btn btn-secondary home__button" href="#contact">
-                        {% trans "Subscribe now" context "Homepage action" %}
+                        {% trans "Contact Us" context "Homepage action" %}
                     </a>
                 </div>
             </div>
@@ -198,7 +198,7 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group mb-md-0">
-                                <input class="form-control" id="contact_phone" name="contact_phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                                <input class="form-control" id="contact_phone" name="contact_phone" type="tel" placeholder="Your Mobile Number *" required="required" data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div id="success">
@@ -220,65 +220,30 @@
     </section>
     <script type="application/ld+json">{{ webpage_schema|safe }}</script>
   </div>
+
+ <div class="modal" tabindex="-1" role="dialog" id="ouibounce-modal" style="background:rgba(0, 0, 0, .8);">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background: light-orange;">
+        <div class="modal-header">
+          <h5 class="modal-title">Leaving so soon?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Drop in your contact number and get a FREE site visit and a 10% DISCOUNT on all our products.</p>
+        </div>
+        <div class="modal-footer text-center justify-content-center">
+
+            <a class="btn btn-primary" href="#contact">
+              {% trans "Contact Us" context "Homepage action" %}
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
-
-
-Total value of Ryan's investment :
-
-      - Money - 30,00,000 INR
-
-      - Time and Effort - 
-
-            1 hour of mentoring per week
-
-            1 hour of talking to customers per week
-
-            TOTAL - 8 hours per month 
-
-            In terms of money, assuming 5,000 per hour -> 40,000 INR per month
-
-            We would probably need this support for 1st 2 years -> 9,60,000 INR ~~  10,00,000 INR
-
-TOTAL VALUE = 30,00,000 + 10,00,000 = 40,00,000 INR
-
-
-
-Approximate valuation of Karat Farms based on competitor data:
-
-      - UrbanKisaan is very similar to Karat Farms in terms of what we want to achieve. We are currently into producing homekits which involves retrofitting gardens to people's terraces. We can directly fit this in apartment complexes if we have contacts with real estate builders as a B2B model. Also, we can get into the business of selling homegrown produce.
-
-      - Urban Kisaan's funding on Crunchbase is 1.5mn $ for seed round.
-
-      - Assuming that this is for 25% equity -> The valuation is at 6mn$ -> 44,24,29,815 INR ~~ 45,00,00,000 INR
-
-
-
-Assuming Karat Farms reaches this level of operations after 5 years, its evaluation will be approx 45,00,00,000 INR
-
-
-
-A possible instrument for investing in Karat Farms - CCD
-
-Valuation Cap - 4,28,00,000 INR (This would ensure that Ryan gets at least 7% of shares in Karat Farms)
-
-Discount rate - 20%
-
-Interest rate - 5%pa
-
-Maturity Date - 5 years
-
-
-
-How it makes sense on ROI?
-
-- 7% of Karat Farms' shares after 4 years will be worth 3,15,00,000 which gives a 10x return on the initial investment of money in 4 years. 
-
-- Separate commission based on clients through Ryan/Qua nutrition as equity.
-
-
-
-I hope that this gives more clarity on the benefits for Ryan and how it makes sense. 
-
 
 
 

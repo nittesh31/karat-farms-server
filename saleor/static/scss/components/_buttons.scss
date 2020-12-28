@@ -28,7 +28,7 @@ a.btn {
     color: $white;
     padding: $global-padding $global-padding * 4;
     &:hover {
-      background-color: #42beab;
+      background-color: $black;
       border: none;
       color: $white;
     }

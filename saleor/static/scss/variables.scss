@@ -6,6 +6,7 @@ $button-border-radius: 12px;
 // COLORS
 $body-color: #333333;
 $white: #fff;
+$black: #000;
 $light-gray: #f1f5f5;
 $gray: #d3d1d0;
 $darken-gray: darken($gray, 10%);
@@ -33,7 +34,7 @@ $theme-colors: (
   primary: $light-orange,
   secondary: $white,
   success: $green,
-  info: $turquoise,
+  info: $black,
   warning: #ffc107,
   danger: $red,
   light: #f8f9fa,
