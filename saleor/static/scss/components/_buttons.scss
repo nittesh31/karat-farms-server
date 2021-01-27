@@ -65,6 +65,26 @@ a.btn {
       background-color: $darken-gray;
     }
   }
+  &.light-grey {
+    background-color: $light-grey;
+    padding: 1rem 4rem;
+    color: $black;
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+  }
+  &.orange-border {
+    background-color: transparent;
+    color: $light-orange;
+    border: 1px solid $light-orange;
+    padding: 8px;
+    &:hover {
+        background-color: $light-orange;
+        color: $black;
+    }
+  }
+
   &.btn-link {
     padding: 0;
     vertical-align: baseline;

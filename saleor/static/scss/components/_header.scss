@@ -34,3 +34,36 @@
     }
   }
 }
+
+
+nav.navbar {
+  @media (min-width: 992px) {
+    background: transparent;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  background: $black;
+  padding: 15px;
+  transition: top 0.2s ease-in-out, background-color 0.5s ease;
+}
+
+nav.black {
+  background: $black;
+}
+
+.navbar-nav {
+  .nav-link {
+    color: $white;
+    &:hover {
+      color: $light-orange;
+    }
+  }
+  .nav-link.active {
+    color: $light-orange !important;
+  }
+}
+
+.nav-up {
+    top: -70px;
+}
+

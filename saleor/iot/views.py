@@ -23,7 +23,7 @@ s3_client = boto3.client('s3',
 def iotDashboard(request):
     form = ChangeTimerForm()
     all_images = []
-    for i in range(5):
+    for i in range(10):
         objects = FarmImage.objects.filter(email=request.user.email, camera_no=i).order_by('-time_created')[:5]
         images = []
         for object in objects:
@@ -116,3 +116,7 @@ def post_image(request):
 @csrf_exempt
 def get_new_bin(request):
     return FileResponse(open("./karat-farms-iot.ino.esp32.bin", "rb"))
+
+def update_status(request):
+    return HttpResponse("hi")
+
