@@ -35,11 +35,6 @@
   // Scrolling Effect
   $(window).on("scroll", function() {
     didScroll = true;
-    if($(window).scrollTop() - 300 > 0) {
-      $('nav').addClass('black');
-    } else {
-      $('nav').removeClass('black');
-    }
   });
 
   setInterval(function() {
@@ -56,7 +51,6 @@
     console.log("navbarHeight = " + navbarHeight);    // Make sure they scroll more than delta
     if (Math.abs(lastScrollTop - st) <= delta)
       return;
-    console.log("yo");
 
     // If they scrolled down and are past the navbar, add class .nav-up.
     // This is necessary so you never see what is "behind" the navbar.

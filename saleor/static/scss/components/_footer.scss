@@ -1,6 +1,6 @@
 .footer {
   &__menus {
-    background-color: $light-grey;
+    background-color: $white;
     padding: $global-padding * 2 0;
     @include media-breakpoint-down(xs) {
       text-align: center;
@@ -57,7 +57,7 @@
       opacity: 0.6;
     }
     &.social-footer {
-      background-color: $light-orange;
+      background-color: $carrot-orange;
       border-radius: 100%;
       display: inline-block;
       height: 36px;

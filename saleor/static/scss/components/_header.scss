@@ -38,11 +38,11 @@
 
 nav.navbar {
   @media (min-width: 992px) {
-    background: transparent;
+    background: $white;
     padding-left: 70px;
     padding-right: 70px;
   }
-  background: $black;
+  background: $white;
   padding: 15px;
   transition: top 0.2s ease-in-out, background-color 0.5s ease;
 }

@@ -20,7 +20,7 @@ $green: #27ae60;
 $beige: #fffaec;
 $turquoise: #13bebb;
 $light-turquoise: #3ee7cd;
-$carrot-orange: #ef7215;
+$carrot-orange: #ff8300;
 $light-orange: #da9570;
 $light-grey: #ebe3dd;
 
@@ -40,3 +40,9 @@ $theme-colors: (
   light: #f8f9fa,
   dark: #343a40
 );
+
+//CAROUSEL
+$carousel-indicator-width:           30px;
+$carousel-indicator-height:          30px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer:          3px;
