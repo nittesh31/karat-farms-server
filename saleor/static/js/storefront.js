@@ -19,4 +19,3 @@ import "./components/variant-picker";
 import "./components/description-json";
 import "./components/scrolling-nav";
 import "./components/poster";
-import "./components/exit-popup"
